@@ -1,4 +1,4 @@
-class Calculator {
+public class Calculator {
     private int result;
 
     public Calculator() {
@@ -18,18 +18,17 @@ class Calculator {
     }
 
     public void subtract(int value) {
-        this.result += value;
+        this.result -= value;  // fixed
     }
 
     public void multiply(int value) {
-        for (int i=1; i<value; i++) {
-            add(value);
-        }
+        this.result *= value;  // fixed
     }
 
     public void exponent(int value) {
-        for(int i=1; i<value; i++) {
-            multiply(value);
+        int base = this.result;
+        for (int i = 1; i < value; i++) {
+            this.result *= base;  // fixed
         }
     }
 }
